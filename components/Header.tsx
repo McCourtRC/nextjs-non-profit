@@ -1,7 +1,11 @@
 import Link from 'next/link';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import { css } from '@emotion/react';
+import Button from 'lib/Button';
 
 const Header = () => {
+  const { data: session } = useSession();
+
   return (
     <header
       css={css`
@@ -48,6 +52,13 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <div>
+        {session ? (
+          <Button onClick={() => signOut()}>Sign out</Button>
+        ) : (
+          <Button onClick={() => signIn('google')}>Sign in</Button>
+        )}
+      </div>
     </header>
   );
 };
