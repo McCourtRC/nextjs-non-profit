@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Head from 'next/head';
 import Header from 'components/Header';
+import { css } from '@emotion/react';
 
 const Layout: FC = ({ children }) => {
   return (
@@ -11,7 +12,13 @@ const Layout: FC = ({ children }) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
-      <main>{children}</main>
+      <main
+        css={css`
+          margin: 0 2rem;
+        `}
+      >
+        {children}
+      </main>
     </>
   );
 };
