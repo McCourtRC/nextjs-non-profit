@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
+import PageTitle from 'lib/PageTitle';
 
 const Contact: NextPage = () => {
   return (
     <>
-      <h2>Contact</h2>
+      <PageTitle>Contact</PageTitle>
     </>
   );
 };
