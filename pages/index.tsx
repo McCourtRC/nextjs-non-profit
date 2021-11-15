@@ -1,17 +1,23 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from 'styles/Home.module.css';
+import { css } from '@emotion/react';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Non Profit</title>
         <meta name='description' content='Non Profit helps people' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className={styles.main}>Home</main>
+      <main
+        css={css`
+          color: hotpink;
+        `}
+      >
+        Home
+      </main>
     </div>
   );
 };
